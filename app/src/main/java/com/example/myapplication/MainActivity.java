@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -47,11 +48,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     public void go(View view) {
         nameError.setVisibility(View.GONE);
         emailError.setVisibility(View.GONE);
         passwordError.setVisibility(View.GONE);
-
         if(edName.length()>10) {
             new AlertDialog.Builder(MainActivity.this)
                     .setTitle("錯誤")
@@ -99,6 +100,9 @@ public class MainActivity extends AppCompatActivity {
                     }).show();
             passwordError.setVisibility(View.VISIBLE);
         }
+        
+        Intent intent = new Intent(this,RegistrationResult.class);
+        startActivity(intent);
     }
 
     @Override
