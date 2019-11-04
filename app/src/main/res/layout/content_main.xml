@@ -12,9 +12,13 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="302dp"
         android:text="User name"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="48dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/name"
@@ -70,6 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:onClick="go"
         android:text="Go"
         app:layout_constraintStart_toStartOf="@+id/password"
         app:layout_constraintTop_toBottomOf="@+id/password" />
@@ -80,6 +85,7 @@
         android:layout_height="37dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="8dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/name"
         app:layout_constraintStart_toEndOf="@+id/name"
         app:srcCompat="@drawable/error" />
@@ -90,6 +96,7 @@
         android:layout_height="37dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="8dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/email"
         app:layout_constraintStart_toEndOf="@+id/email"
         app:srcCompat="@drawable/error" />
@@ -100,6 +107,7 @@
         android:layout_height="37dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="8dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/password"
         app:layout_constraintStart_toEndOf="@+id/password"
         app:srcCompat="@drawable/error" />

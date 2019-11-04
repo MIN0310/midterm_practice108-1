@@ -1,10 +1,12 @@
 package com.example.myapplication;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -41,8 +43,62 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
             }
         });
+    }
+    public void go(View view) {
+        nameError.setVisibility(View.GONE);
+        emailError.setVisibility(View.GONE);
+        passwordError.setVisibility(View.GONE);
+
+        if(edName.length()>10) {
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("錯誤")
+                    .setMessage("名字太長")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    }).show();
+            nameError.setVisibility(View.VISIBLE);
+        }else if (edName.length() == 0) {
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("錯誤")
+                    .setMessage("名字不能為空")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    }).show();
+            nameError.setVisibility(View.VISIBLE);
+        }
+        if(edEmail.length() == 0){
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("錯誤")
+                    .setMessage("Email不能為空")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    }).show();
+            emailError.setVisibility(View.VISIBLE);
+        }
+        if(edPassword.length() < 5) {
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("錯誤")
+                    .setMessage("密碼需大於五個數")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    }).show();
+            passwordError.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
